@@ -50,16 +50,14 @@ messages = ["I've got a real knee-slapper for you!",
             "Try this bad-boy on for size:"]
 restricted_users = ["jshaak"]
 
-key_store = {}
-key_store['*'] = []
+key_store = {'*': []}
 for i in xrange(app.counter):
     joke = json.loads(db.get("jokes:%d" % i))
     joke['count'] = COUNT
     key_store['*'].append(joke)
     for tag in joke['tags']:
-        if tag not in key_store:
-            key_store[tag] = []
-        key_store[tag].append(joke)
+        tag_list = key_store.setdefault(tag, [])
+        tag_list.append(joke)
 
 @app.route('/', methods=['POST'])
 def hello_world():
