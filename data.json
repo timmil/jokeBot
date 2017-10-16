@@ -525,5 +525,13 @@
             "couples", 
             "counseling"
         ]
-    } 
+    },
+    {
+        "joke": " A priest, a nun, and a rabbi walk into a bar. Neither was seriously injured.",
+        "tags": [
+            "priest", 
+            "nun", 
+            "rabbi"
+        ]
+    }   
 ]
